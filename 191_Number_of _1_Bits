@@ -1,0 +1,20 @@
+/**
+ * @param {number} n - a positive integer
+ * @return {number}
+ */
+var hammingWeight = function(n) {
+    let num = n;
+    let binary = String(num % 2);
+    for (; num > 1; ) {
+        num = parseInt(num / 2);
+        binary =  (num % 2) + (binary);
+    }
+    let counter = 0;
+    let arr = binary.split('')
+    for (i = 0; i<arr.length; i++){
+        if (arr[i] == 1){
+            counter++
+        }
+    }
+    return counter
+};
